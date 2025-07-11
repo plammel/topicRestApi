@@ -16,24 +16,10 @@ export class TopicRepository extends InMemoryRepository<Topic> implements ITopic
     return versions.find(v => v.version === version) || null;
   }
 
-//   async findAllVersions(originalTopicId: string): Promise<ITopicVersion[]> {
-//     return this.versionData.get(originalTopicId) || [];
-//   }
-
-//   async findLatestVersion(originalTopicId: string): Promise<ITopicVersion | null> {
-//     const versions = this.versionData.get(originalTopicId) || [];
-//     return versions.find(v => v.isLatest) || null;
-//   }
-
   async findChildren(parentId: string): Promise<ITopic[]> {
     const allTopics = await this.findAll();
     return allTopics.filter(topic => topic.parentTopicId === parentId);
   }
-
-//   async findByParent(parentId?: string): Promise<ITopic[]> {
-//     const allTopics = await this.findAll();
-//     return allTopics.filter(topic => topic.parentTopicId === parentId);
-//   }
 
   async createVersion(topic: ITopic): Promise<ITopicVersion> {
     const versions = this.versionData.get(topic.id!) || [];

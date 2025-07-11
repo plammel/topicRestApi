@@ -3,10 +3,8 @@ import {
   ITopic,
   ITopicHierarchy,
   ITopicPath,
-  // IPathNode 
 } from '../types';
 import { TopicFactory } from '../factories/TopicFactory';
-// import { TopicPathFinder } from './algorithms/TopicPathFinder';
 import { ResourceRepository } from '../repositories/ResourceRepository';
 
 export class TopicService {
@@ -106,7 +104,7 @@ export class TopicService {
     const targetLcaIndex = targetPath.indexOf(lcaNodeId);
 
     const pathToLCA = sourcePath.slice(0, lcaIndex + 1);
-    const pathFromLCAToTarget = targetPath.slice(0, targetLcaIndex).reverse().slice(1);
+    const pathFromLCAToTarget = targetPath.slice(0, targetLcaIndex).reverse();
 
     topicPath.path = pathToLCA.concat(pathFromLCAToTarget);
     topicPath.distance = topicPath.path.length - 1;

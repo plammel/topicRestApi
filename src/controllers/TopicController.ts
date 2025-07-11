@@ -90,14 +90,6 @@ export class TopicController {
     }
   };
 
-//   getAllTopicVersions = async (req: Request, res: Response, next: NextFunction) => {
-//     try {
-//       const versions = await this.topicService.getAllTopicVersions(req.params.id);
-//       res.json(versions);
-//     } catch (error) {
-//       next(error);
-//     }
-//   };
 
   findShortestPath = async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -115,17 +107,4 @@ export class TopicController {
     }
   };
 
-//   findAllPaths = async (req: Request, res: Response, next: NextFunction) => {
-//     try {
-//       const maxDepth = req.query.maxDepth ? parseInt(req.query.maxDepth as string, 10) : 10;
-//       const paths = await this.topicService.findAllPaths(
-//         req.params.sourceId,
-//         req.params.targetId,
-//         maxDepth
-//       );
-//       res.json(paths);
-//     } catch (error) {
-//       next(error);
-//     }
-//   };
 }
