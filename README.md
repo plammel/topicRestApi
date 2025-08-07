@@ -1,4 +1,4 @@
-# Project Mark Challenge - Topic REST API
+# Topic REST API
 
 A Node.js REST API built with Express and TypeScript that manages topics, users, and resources with authentication and authorization.
 
